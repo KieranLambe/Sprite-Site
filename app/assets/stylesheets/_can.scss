@@ -1,0 +1,15 @@
+#sprite-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+#sprite-can {
+  position: absolute;
+  top: -400px;
+  right: 10%;
+  transform: rotate(20deg);
+  max-height: 384px; /* 80% of 480px */
+}

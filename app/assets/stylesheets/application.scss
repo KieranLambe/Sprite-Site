@@ -1,1 +1,56 @@
-// Sassy
+@import "header";
+@import "card";
+@import "can";
+@import "lemon";
+@import "new-can";
+@import "bootstrap";
+
+body {
+  background-color: #05731c;
+  font-family: aktiv-grotesk, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+}
+
+div {
+  /* Ensure spans are displayed as inline-block */
+  span {
+    display: inline-block;
+    margin-right: 10px; /* Example: Add margin between spans */
+  }
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-style: italic;
+  color: #fff;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  font-style: italic;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffd100;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: bold;
+  color: #fff;
+}
+
+.content-padding {
+  padding-top: 80px; /* Adjust based on your header height */
+  padding-bottom: 60px;
+  padding-left: 40px;
+}
+
+.floating-element {
+  transition: transform 0.3s ease-out;
+}

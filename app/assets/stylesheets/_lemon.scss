@@ -1,0 +1,39 @@
+.lemon-container {
+  margin: 0 auto;
+  width: 600px;
+  position: relative;
+  transform: rotate(45deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lemon {
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: #ffd100;
+  position: relative;
+  transform: rotate(48deg) skew(6deg, 6deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lemon-text {
+  transform: rotate(-93deg); /* Counteract the rotation of the lemon */
+  text-align: center;
+  color: #fff;
+}
+
+.lemon:after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background: #ffd100;
+  top: 64%;
+  left: 50%;
+  position: absolute;
+  margin-left: 72px;
+  border-radius: 57px;
+}

@@ -1,19 +1,18 @@
 $primary: green;
+$body-bg: #05731c;
+
+body {
+  font-family: aktiv-grotesk, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+}
 
 @import "bootstrap";
-
 @import "header";
 @import "card";
 @import "can";
 @import "lemon";
 @import "new-can";
-
-body {
-  background-color: #05731c;
-  font-family: aktiv-grotesk, sans-serif;
-  font-style: normal;
-  font-weight: 200;
-}
 
 div {
   /* Ensure spans are displayed as inline-block */

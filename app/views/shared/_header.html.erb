@@ -1,0 +1,16 @@
+<header class="site-header">
+    <div class="container">
+        <h4>The Kieran Company</h4>
+        <nav>
+            <ul>
+                <%= link_to "Home", root_path %>
+                <%= link_to "About", about_path %>
+                <%= link_to "Contact", contact_path %>
+                <li><%= link_to basket_path(@basket.token) do %>
+                Basket
+                <% end %>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

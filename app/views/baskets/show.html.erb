@@ -1,0 +1,6 @@
+<h1>Shopping Basket</h1>
+<ul>
+  <% @basket.items.each do |item| %>
+    <li><%= item.name %> - <%= number_to_currency(item.price) %></li>
+  <% end %>
+</ul>

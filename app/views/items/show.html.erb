@@ -1,0 +1,6 @@
+<h1><%= @item.name %></h1>
+<p><%= @item.description %></p>
+<p>Price: <%= number_to_currency(@item.price) %></p>
+<p>Rating: <%= @item.star_rating %> stars</p>
+<%= image_tag @item.image if @item.image.present? %>
+<%= button_to 'Add to Basket', add_item_basket_path(@basket, item_id: @item.id), method: :post %>

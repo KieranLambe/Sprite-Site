@@ -1,0 +1,62 @@
+<div class="content-padding">
+  <div data-controller="floating" data-floating-offset-value="20">
+  <h3 data-floating-target="element" data-offset="20" class="floating-element">When life gives you</h3>
+  </div>
+  <h2>Lemons</h2>
+</div>
+<div data-controller="hello">
+  Stimulus Test
+</div>
+<div class="lemon-container">
+  <div class="lemon">
+    <div class="lemon-text">
+      <h4> In 1961 we took </h4>
+      <h4 style="font-style: italic;">sour</h4>
+      <h4 style="font-weight: bold;">lemons</h4>
+      <h4>and made:</h4>
+    </div>
+  </div>
+</div>
+<div data-controller="floating" data-floating-offset-value="20">
+  <div id="sprite-container">
+    <div data-floating-target="element" data-offset="20" class="floating-element">
+      <%= image_tag 'sprite-can.png', id: 'sprite-can', alt: 'Sprite Can' %>
+    </div>
+    <div data-floating-target="element" data-offset="40" class="floating-element">
+      <%= image_tag 'new-sprite-can.png', id: 'new-sprite-can', alt: 'New Sprite Can' %>
+    </div>
+  </div>
+</div>
+<div class="content-padding">
+  <span><h3>Browse our</h3></span>
+  <span><h2>Unique</h2></span>
+  <span><h3>thirst soultions:</h3></span>
+</div>
+<div class="container mt-4">
+  <div class="row">
+    <% @items.each_with_index do |item, index| %>
+      <div class="col-md-4 mb-4">
+        <div class="card bg-black text-white">
+          <% if item.image.attached? %>
+            <%= image_tag item.image, class: "card-img-top" %>
+          <% else %>
+            <%= image_tag 'default_image.png', class: "card-img-top" %> <!-- Default image if none attached -->
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= item.name %></h5>
+            <p class="card-text"><%= item.description %></p>
+            <p class="card-text"><%= number_to_currency(item.price) %></p>
+            <p class="card-text">Star Rating: <%= item.star_rating %></p>
+             <%= form_with url: basket_add_to_basket_path(@basket.token), method: :post, local: true do %>
+              <%= hidden_field_tag :item_id, item.id %>
+              <%= submit_tag "Add to Basket", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <% if (index + 1) % 3 == 0 %>
+        </div><div class="row">
+      <% end %>
+    <% end %>
+  </div>
+</div>

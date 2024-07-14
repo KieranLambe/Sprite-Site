@@ -3,13 +3,16 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
-  position: relative;
+  position: fixed; /* Fixed position to keep sprites within the viewport */
+  width: 100%; /* Full width of the viewport */
+  z-index: 100; /* Ensure sprites are above other content */
+}
+
+.floating-element {
+  position: relative; /* Relative positioning to keep children elements aligned */
 }
 
 #sprite-can {
-  position: absolute;
-  top: -400px;
-  right: 10%;
   transform: rotate(20deg);
-  max-height: 384px; /* 80% of 480px */
+  max-height: 384px; /* Limit the height if needed */
 }

@@ -2,7 +2,6 @@
   margin: 0 auto;
   width: 600px;
   position: relative;
-  transform: rotate(45deg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,14 +13,14 @@
   border-radius: 50%;
   background: #ffd100;
   position: relative;
-  transform: rotate(48deg) skew(6deg, 6deg);
+  transform: rotate(90deg) skew(6deg, 6deg); /* Apply rotation and skew directly here */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .lemon-text {
-  transform: rotate(-93deg); /* Counteract the rotation of the lemon */
+  transform: rotate(-84deg); /* Counteract the rotation of the lemon */
   text-align: center;
   color: #fff;
 }

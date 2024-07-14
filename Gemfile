@@ -29,6 +29,9 @@ gem "dartsass-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+#Kieran added bootstrap
+gem 'bootstrap', '~> 5.3.3'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

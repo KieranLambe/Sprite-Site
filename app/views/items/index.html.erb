@@ -60,7 +60,7 @@
             <p class="card-text"><%= item.description %></p>
             <p class="card-text"><%= number_to_currency(item.price) %></p>
             <p class="card-text">Star Rating: <%= item.star_rating %></p>
-             <%= form_with url: basket_add_to_basket_path(@basket.token), method: :post, local: true do %>
+            <%= form_with url: basket_add_to_basket_path(@basket.token), method: :post, local: true do %>
               <%= hidden_field_tag :item_id, item.id %>
               <%= submit_tag "Add to Basket", class: "btn btn-primary" %>
             <% end %>

@@ -1,0 +1,37 @@
+/* Styles for the basket item cards */
+.basket-item {
+  border: 2px solid #000; /* Black border to mimic Excel cells */
+  border-radius: 0; /* Sharp edges */
+  overflow: hidden; /* Ensure the image and content fit within the card */
+}
+
+.basket-item .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.basket-item .btn-danger {
+  margin-top: auto; /* Align the remove button to the bottom */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.total-price {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.total-price h4 {
+  margin: 0;
+}
+
+.total-price .btn-primary {
+  margin-left: auto;
+}

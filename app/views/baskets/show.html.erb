@@ -1,6 +1,40 @@
-<h1>Shopping Basket</h1>
-<ul>
-  <% @basket.items.each do |item| %>
-    <li><%= item.name %> - <%= number_to_currency(item.price) %></li>
-  <% end %>
-</ul>
+<h1 class="content-padding">Shopping Basket</h1>
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <% @basket.items.each do |item| %>
+        <div class="card basket-item mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <% if item.image.attached? %>
+                <%= image_tag item.image, class: 'img-fluid rounded-start' %>
+              <% else %>
+                <%= image_tag 'default_image.png', class: 'img-fluid rounded-start' %> <!-- Default image if none attached -->
+              <% end %>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><%= item.name %></h5>
+                <p class="card-text"><%= item.description %></p>
+                <p class="card-text"><small class="text-muted">$<%= item.price %></small></p>
+                <%= form_with url: basket_remove_item_path(@basket.token, item.id), method: :delete, local: true do %>
+                  <%= hidden_field_tag :item_id, item.id %>
+                  <%= submit_tag "Remove from Basket", class: "btn btn-danger" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Total Price and Checkout Button -->
+  <div class="row justify-content-center">
+    <div class="col-8 text-right total-price">
+      <h4>Total: $<%= @basket.items.sum(&:price) %></h4>
+      <%= button_to 'Checkout', class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
+

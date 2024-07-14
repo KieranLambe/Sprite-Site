@@ -11,6 +11,12 @@ class BasketsController < ApplicationController
     redirect_to items_path, notice: 'Item added to basket'
   end
 
+  def remove_item
+    item = @basket.items.find(params[:id])
+    @basket.items.delete(item)
+    redirect_to basket_path(@basket), notice: 'Item removed from basket.'
+  end
+
   private
 
   def set_basket

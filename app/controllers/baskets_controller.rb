@@ -20,9 +20,16 @@ class BasketsController < ApplicationController
 
   def update_item_quantity
     basket_item = @basket.basket_items.find(params[:id])
-    basket_item.update(quantity: params[:quantity])
+    quantity_change = params[:quantity_change].to_i
+    new_quantity = basket_item.quantity + quantity_change
 
-    redirect_to basket_path(@basket), notice: 'Item quantity updated'
+    if new_quantity <= 0
+      basket_item.destroy
+      redirect_to basket_path(@basket), notice: 'Item removed from basket.'
+    else
+      basket_item.update(quantity: new_quantity)
+      redirect_to basket_path(@basket), notice: 'Quantity updated.'
+    end
   end
 
   def remove_item

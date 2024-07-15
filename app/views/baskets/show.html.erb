@@ -2,24 +2,29 @@
 <div class="container my-5">
   <div class="row justify-content-center">
     <div class="col-8">
-      <% @basket.items.each do |item| %>
+      <% @basket.basket_items.each do |basket_item| %>
         <div class="card basket-item mb-3">
           <div class="row g-0">
             <div class="col-md-4">
-              <% if item.image.attached? %>
-                <%= image_tag item.image, class: 'img-fluid rounded-start' %>
+              <% if basket_item.item.image.attached? %>
+                <%= image_tag basket_item.item.image, class: 'img-fluid rounded-start' %>
               <% else %>
                 <%= image_tag 'default_image.png', class: 'img-fluid rounded-start' %> <!-- Default image if none attached -->
               <% end %>
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title"><%= item.name %></h5>
-                <p class="card-text"><%= item.description %></p>
-                <p class="card-text"><small class="text-muted">$<%= item.price %></small></p>
-                <%= form_with url: basket_remove_item_path(@basket.token, item.id), method: :delete, local: true do %>
-                  <%= hidden_field_tag :item_id, item.id %>
-                  <%= submit_tag "Remove from Basket", class: "btn btn-danger" %>
+                <h5 class="card-title"><%= basket_item.item.name %></h5>
+                <p class="card-text"><%= basket_item.item.description %></p>
+                <p class="card-text"><small class="text-muted">$<%= basket_item.item.price %></small></p>
+                <%= form_with url: basket_update_item_quantity_path(@basket.token, basket_item), method: :patch, local: true do %>
+                  <div class="form-group">
+                    <%= number_field_tag :quantity, basket_item.quantity, class: 'form-control', min: 1 %>
+                  </div>
+                  <%= submit_tag 'Update Quantity', class: 'btn btn-secondary' %>
+                <% end %>
+                <%= form_with url: basket_remove_item_path(@basket.token, basket_item), method: :delete, local: true do %>
+                  <%= submit_tag 'Remove from Basket', class: 'btn btn-danger' %>
                 <% end %>
               </div>
             </div>
@@ -32,9 +37,8 @@
   <!-- Total Price and Checkout Button -->
   <div class="row justify-content-center">
     <div class="col-8 text-right total-price">
-      <h4>Total: $<%= @basket.items.sum(&:price) %></h4>
+      <h4>Total: $<%= @basket.basket_items.sum { |basket_item| basket_item.item.price * basket_item.quantity } %></h4>
       <%= button_to 'Checkout', class: 'btn btn-primary' %>
     </div>
   </div>
 </div>
-

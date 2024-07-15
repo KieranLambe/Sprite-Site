@@ -62,6 +62,9 @@
             <p class="card-text">Star Rating: <%= item.star_rating %></p>
             <%= form_with url: basket_add_to_basket_path(@basket.token), method: :post, local: true do %>
               <%= hidden_field_tag :item_id, item.id %>
+              <div class="form-group">
+                <%= number_field_tag :quantity, 1, class: 'form-control', min: 1 %>
+              </div>
               <%= submit_tag "Add to Basket", class: "btn btn-primary" %>
             <% end %>
           </div>

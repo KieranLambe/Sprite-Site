@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :baskets, only: [:show] do
     post 'add_to_basket', to: 'baskets#add_to_basket', as: 'add_to_basket'
+    patch 'update_item_quantity/:id', to: 'baskets#update_item_quantity', as: 'update_item_quantity'
     delete 'remove_item/:id', to: 'baskets#remove_item', as: 'remove_item'
   end  
 

@@ -32,6 +32,9 @@ gem "jbuilder"
 #Kieran added bootstrap
 gem 'bootstrap', '~> 5.3.3'
 
+#Kieran added fontawesome
+gem "font-awesome-sass", "~> 6.5.2"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

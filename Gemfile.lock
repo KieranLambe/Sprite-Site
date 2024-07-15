@@ -111,6 +111,11 @@ GEM
     error_highlight (0.6.0)
     erubi (1.13.0)
     execjs (2.9.1)
+    ffi (1.17.0-arm64-darwin)
+    ffi (1.17.0-x86_64-darwin)
+    ffi (1.17.0-x86_64-linux-gnu)
+    font-awesome-sass (6.5.2)
+      sassc (~> 2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     google-protobuf (4.27.2-arm64-darwin)
@@ -227,6 +232,8 @@ GEM
       google-protobuf (~> 4.26)
     sass-embedded (1.77.8-x86_64-darwin)
       google-protobuf (~> 4.26)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     selenium-webdriver (4.22.0)
       base64 (~> 0.2)
       logger (~> 1.4)
@@ -278,6 +285,7 @@ DEPENDENCIES
   dartsass-rails
   debug
   error_highlight (>= 0.4.0)
+  font-awesome-sass (~> 6.5.2)
   importmap-rails
   jbuilder
   pg (~> 1.1)

@@ -1,7 +1,5 @@
 class BasketsController < ApplicationController
-  before_action :set_basket
   def show
-    # set_basket initialises @basket
   end
   
   def add_to_basket
@@ -15,12 +13,5 @@ class BasketsController < ApplicationController
     item = @basket.items.find(params[:id])
     @basket.items.delete(item)
     redirect_to basket_path(@basket), notice: 'Item removed from basket.'
-  end
-
-  private
-
-  def set_basket
-    @basket = Basket.find_or_create_by(token: cookies[:basket_token])
-    cookies[:basket_token] ||= @basket.token
   end
 end

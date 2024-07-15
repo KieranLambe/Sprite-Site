@@ -6,40 +6,72 @@
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 10; /* Adjust z-index as needed */
+  z-index: 10;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  // font-family: aktiv-grotesk, sans-serif;
-  // font-style: normal;
-  // font-weight: 200;
 
   .container {
     width: 100%;
-    max-width: 1200px; /* Adjust max-width as needed */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
 
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
 
-  nav ul li {
-    display: inline-block;
-    margin-right: 10px;
-  }
+    .header-links {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
 
-  nav ul li a {
-    color: #666;
-    text-decoration: none;
-    font-size: 16px;
-  }
+      li {
+        margin-right: 20px; // Adjust spacing between links
+      }
 
-  nav ul li a:hover {
-    color: #333;
+      a {
+        color: #666;
+        text-decoration: none;
+        font-size: 14px; // Adjust font size for links
+      }
+
+      a:hover {
+        color: #333;
+      }
+    }
+
+    .company-name {
+      margin-right: 20px; // Adjust spacing between company name and links
+      font-size: 20px; // Adjust font size for company name
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .basket-link {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        font-size: 18px; // Adjust font size for basket icon
+      }
+
+      i {
+        font-size: 24px; // Adjust size of basket icon
+        color: #666;
+        cursor: pointer;
+      }
+
+      i:hover {
+        color: #333;
+      }
+    }
   }
 }

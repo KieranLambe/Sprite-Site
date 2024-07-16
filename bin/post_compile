@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+
+echo "-----> Updating RubyGems to 3.3.22"
+gem update --system 3.3.22

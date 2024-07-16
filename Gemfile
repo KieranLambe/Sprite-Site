@@ -29,10 +29,6 @@ gem "dartsass-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-#Kieran added rubygems version specifier
-gem 'rubygems-update', '3.3.22'
-
-
 #Kieran added bootstrap
 gem 'bootstrap', '~> 5.3.3'
 

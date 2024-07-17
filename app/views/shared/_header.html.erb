@@ -1,15 +1,15 @@
 <header class="site-header">
-    <div class="container">
-        <div class="header-left">
-            <h4>The Kieran Company</h4>
-            <nav>
-                <ul>
-                    <li><%= link_to "Home", root_path %></li>
-                    <li><%= link_to "About", about_path %></li>
-                    <li><%= link_to "Contact", contact_path %></li>
-                </ul>
-            </nav>
+    <div class="d-flex justify-content-between">
+        <div>
+            <span>
+                <%= link_to root_path, class: 'unstyled-link' do %>
+                    <h4>The Kieran Company</h4>
+                <% end %>
+            </span>
+            <span><h5><%= link_to "About", about_path %></h5></span>
+            <span><h5><%= link_to "Contact", contact_path %></h5></span>
         </div>
+        </nav>
         <div class="basket-icon">
             <%= link_to basket_path(@basket.token) do %>
                 <i class="fas fa-shopping-basket"></i>

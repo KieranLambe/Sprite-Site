@@ -1,8 +1,8 @@
 source "https://rubygems.org"
 
 ruby "3.1.2"
+rubygems "3.5.15"
 
-rubygems '3.5.15'
 gem 'bundler', '2.5.7'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

@@ -1,26 +1,29 @@
 <div class="content-padding">
   <div class="container">
-    <div class="col-md-4">
-      <div class="row">
-        <h3>When life gives you</h3>
-        <h2>Lemons</h2>
-      </div>
-      <div class="row">
-        <!-- Left column for the new can -->
-        <div data-controller="floating" data-floating-offset-value="40">
-          <div id="sprite-container">
-            <div data-floating-target="element" data-offset="40" class="floating-element">
-              <%= image_tag 'new-sprite-can.png', id: 'new-sprite-can', alt: 'New Sprite Can' %>
+    <div class="row">
+      <!-- Left column for the new can and text -->
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-12">
+            <h3>When life gives you</h3>
+            <h2>Lemons</h2>
+          </div>
+          <div class="col-12" data-controller="floating" data-floating-offset-value="40">
+            <div id="sprite-container">
+              <div data-floating-target="element" data-offset="40" class="floating-element">
+                <%= image_tag 'new-sprite-can.png', id: 'new-sprite-can', alt: 'New Sprite Can' %>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-5">
-        <!-- Center column for the lemon -->
+
+      <!-- Center column for the lemon -->
+      <div class="col-md-4">
         <div class="lemon-container">
           <div class="lemon">
             <div class="lemon-text">
-              <h4> In 1961 we took </h4>
+              <h4>In 1961 we took</h4>
               <h4 style="font-style: italic;">sour</h4>
               <h4 style="font-weight: bold;">lemons</h4>
               <h4>and made:</h4>
@@ -28,19 +31,19 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3">
-        <!-- Right column for the old can -->
-        <div data-controller="floating" data-floating-offset-value="-40">
-          <div id="sprite-container">
-            <div data-floating-target="element" data-offset="20" class="floating-element">
-              <%= image_tag 'sprite-can-classic.png', id: 'sprite-can', alt: 'Sprite Can' %>
-            </div>
+
+      <!-- Right column for the old can -->
+      <div class="col-md-3" data-controller="floating" data-floating-offset-value="-40">
+        <div id="sprite-container">
+          <div data-floating-target="element" data-offset="20" class="floating-element">
+            <%= image_tag 'sprite-can-classic.png', id: 'sprite-can', alt: 'Sprite Can' %>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 <div class="content-padding">
   <span><h3>Browse our</h3></span>

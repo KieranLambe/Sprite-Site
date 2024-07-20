@@ -53,9 +53,13 @@
       <div class="col-md-4 mb-4">
         <div class="card bg-black text-white">
           <% if item.image_filename.present? %>
-            <%= image_tag "items/#{item.image_filename}" %>
+            <div class="card-image-container">
+              <%= image_tag "items/#{item.image_filename}", class: "card-img-top" %>
+            </div>
           <% else %>
-            <%= image_tag 'default_image.png', class: "card-img-top" %> <!-- Default image if none attached -->
+            <div class="card-image-container">
+              <%= image_tag 'default_image.png', class: "card-img-top" %> <!-- Default image if none attached -->
+            </div>
           <% end %>
           <div class="card-body">
             <h5 class="card-title"><%= item.name %></h5>

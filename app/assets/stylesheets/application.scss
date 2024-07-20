@@ -58,6 +58,12 @@ h3 {
   transition: transform 0.3s ease-out;
 }
 
+.contact-image {
+  width: 100%; /* Ensures the image fits within the column */
+  height: auto; /* Maintains aspect ratio */
+  max-width: 200px; /* Optional: Limit the maximum width of the image */
+}
+
 /* Start https://www.cursors-4u.com */
 * {
   cursor: url(https://cur.cursors-4u.net/food/foo-7/foo634.cur), auto !important;

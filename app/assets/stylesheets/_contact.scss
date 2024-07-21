@@ -20,3 +20,8 @@
   height: auto; /* Maintains aspect ratio */
   max-width: px; /* Optional: Limit the maximum width of the image */
 }
+
+.contact-page-content-padding {
+  padding-top: 80px; /* Adjust based on your header height */
+  padding-left: 40px;
+}

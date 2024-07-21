@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: space-between; /* Ensures the space between the text and the image */
+  align-items: center; /* Centers the items vertically */
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+.text-container {
+  flex: 1; /* Takes up remaining space */
+  padding: 10px;
+}
+
+.image-container {
+  flex: 0 0 auto; /* Keeps the image container size fixed */
+  padding: 10px;
+}
+
+.contact-image {
+  max-width: 100%; /* Ensures the image fits within the container */
+  height: auto; /* Maintains aspect ratio */
+  max-width: px; /* Optional: Limit the maximum width of the image */
+}
+
+.contact-page-content-padding {
+  padding-top: 80px; /* Adjust based on your header height */
+  padding-left: 40px;
+}

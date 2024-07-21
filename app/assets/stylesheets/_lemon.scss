@@ -1,22 +1,46 @@
+.welcome-container {
+  display: flex;
+  justify-content: space-between; /* Ensures space between the columns */
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+.left-column,
+.center-column,
+.right-column {
+  flex: 1; /* Makes each column take equal space */
+  padding: 10px; /* Optional padding */
+}
+
+.welcome-text-container {
+  margin-bottom: 20px; /* Space between text and image */
+}
+
+.image-container {
+  max-width: 340px;
+}
+
 .lemon-container {
-  margin: 0 auto;
-  width: 480px;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .lemon {
-  width: 480px;
-  height: 480px;
+  width: 460px;
+  height: 460px;
   border-radius: 50%;
   background: #ffd100;
   position: relative;
-  transform: rotate(90deg) skew(6deg, 6deg); /* Apply rotation and skew directly here */
+  transform: rotate(90deg) skew(6deg, 6deg);
   display: flex;
   justify-content: center;
   align-items: center;
+  outline: 20px solid white;
+}
+
+#sprite-container img {
+  max-width: 100%;
+  height: auto;
 }
 
 .lemon-text {

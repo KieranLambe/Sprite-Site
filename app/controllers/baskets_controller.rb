@@ -12,7 +12,7 @@ class BasketsController < ApplicationController
   def add_to_basket
     item = Item.find(params[:item_id])
     basket_item = @basket.basket_items.find_or_initialize_by(item: item)
-    basket_item.quantity += params[:quantity].to_i
+    basket_item.quantity = params[:quantity].to_i
     basket_item.save
 
     redirect_to items_path, notice: 'Item added to basket'

@@ -68,11 +68,31 @@
             <p class="card-text">Star Rating: <%= item.star_rating %></p>
             <%= form_with url: basket_add_to_basket_path(@basket.token), method: :post, local: true do %>
               <%= hidden_field_tag :item_id, item.id %>
-              <div class="form-group">
-                <%= number_field_tag :quantity, 1, class: 'form-control', min: 1 %>
+              <div class="quantity-adjuster">
+                <%= button_tag(type: 'button', class: 'btn btn-secondary', onclick: "changeQuantity(this, -1)") do %>
+                  -
+                <% end %>
+                <span class="quantity-display">1</span>
+                <%= button_tag(type: 'button', class: 'btn btn-secondary', onclick: "changeQuantity(this, 1)") do %>
+                  +
+                <% end %>
               </div>
+              <%= hidden_field_tag :quantity, 1, id: "quantity-#{item.id}" %>
               <%= submit_tag "Add to Basket", class: "btn btn-primary" %>
             <% end %>
+            <script>
+              function changeQuantity(button, change) {
+                const form = button.closest('form');
+                const quantityInput = form.querySelector(`input[type="hidden"][name="quantity"]`);
+                const quantityDisplay = form.querySelector('.quantity-display');
+                let quantity = parseInt(quantityInput.value) + change;
+                if (quantity < 1) {
+                  quantity = 1;
+                }
+                quantityInput.value = quantity;
+                quantityDisplay.textContent = quantity;
+              }
+            </script>
           </div>
         </div>
       </div>

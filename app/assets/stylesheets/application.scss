@@ -12,6 +12,7 @@ body {
 @import "card";
 @import "lemon";
 @import "contact";
+@import "can";
 @import "basket-items";
 
 div {
@@ -56,6 +57,18 @@ h3 {
 .floating-element {
   transition: transform 0.3s ease-out;
   position: relative; /* Relative positioning to keep children elements aligned */
+}
+
+.small-rounded-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+}
+
+.medium-rounded-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
 }
 
 /* Start https://www.cursors-4u.com */
